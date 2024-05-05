@@ -1,0 +1,54 @@
+img{
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card {
+  width: 18rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(240, 242, 255, 0.537);
+}
+
+#nav-title{
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+#home {
+  flex-direction: column;
+}
+
+#logo {
+  width: 20vh;
+  height: 20vh;
+  margin-bottom: 3rem;
+}
+
+#navContainer {
+  overflow: hidden;
+}
+
+input{
+  background-color: white;
+}
+
+.container {
+  margin: auto;
+}
+

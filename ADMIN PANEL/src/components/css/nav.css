@@ -1,0 +1,98 @@
+img {
+    width: 30px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    width: 18rem;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 242, 255, 0.537);
+}
+
+/* Your existing styles... */
+
+#nav-title {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+#home {
+    flex-direction: column;
+}
+
+#logo {
+    width: 20vh;
+    height: 20vh;
+    margin-bottom: 3rem;
+}
+
+#navContainer {
+    overflow: hidden;
+}
+
+.menu-icon {
+    cursor: pointer;
+    padding: 20px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.menu-open .menu-links {
+    display: block;
+}
+
+.menu-close .menu-links {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .menu-close {
+        display: none;
+    }
+}
