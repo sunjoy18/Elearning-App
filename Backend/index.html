@@ -1,0 +1,95 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+</head>
+<body>
+  <h1>Multiple File Upload</h1>
+  <form action="http://192.168.0.215:5000/api/upload/content" method="post" enctype="multipart/form-data">
+    <!-- <form> -->
+    <input type="file" name="files" multiple /><br>
+    module<input type="text" id="moduleName" name="moduleName"  /><br>
+    <input type="text" id="org" name="org"  value="FRONTEND" hidden/><br>
+
+    Cou<input type="text" id="courseName" name="courseName"  /><br>
+    uni<input type="text" id="unitName" name="unitName"  /><br>
+
+    chp<input type="text" id="chapterName" name="chapterName"  /><br>
+    min<input type="number" id="min" name="min"  /><br>
+    quizz Q<input type="text" name="questions"  /><br>
+
+    option<input type="text" name="option"  /><br>
+
+    Ans<input type="text" name="correctAnswer"  /><br><br><br><br><br><br><br><br>
+
+    quizz Q<input type="text" name="questions"  /><br>
+
+    option<input type="text" name="option"  /><br>
+
+    Ans<input type="text" name="correctAnswer"  /><br>
+
+    <!-- <button type="button" onclick="postData()">Submit</button> -->
+    <button type="submit">submit</button>
+  </form>
+  <!-- <a href="video.html">
+    Video
+  </a> -->
+  
+  <!-- <button type="button" onclick="completeVideo('video-1.mp4')">Complete</button> -->
+  
+  <!-- <a href="video.html">
+    Video
+  </a> -->
+
+  <script>
+    function completeVideo(filename) {
+  fetch(`http://localhost:5000/api/completeVideo?filename=${filename}`, {
+    method: 'POST',
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Video marked as complete:', data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+    async function postData() {
+      const moduleName = document.getElementById('moduleName').value;
+      const chapterName = document.getElementById('chapterName').value;
+      const unitName = document.getElementById('unitName').value;
+      const courseName = document.getElementById('courseName').value;
+      const url = 'http://192.168.0.215:5000/api/update/chapter'; // Update the URL with your server's URL
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ moduleName, chapterName, unitName, courseName }),
+        });
+
+        const data = await response.json();
+        console.log('Response:', data);
+        alert('Data sent successfully!');
+      } catch (error) {
+        console.error('Error sending data:', error);
+        alert('Error sending data. Please try again.');
+      }
+    }
+  
+
+  </script>
+</body>
+</html>
